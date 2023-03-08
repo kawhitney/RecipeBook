@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Login/Reg";
+}
+
+@* https://images.pexels.com/photos/616484/pexels-photo-616484.jpeg ****CHANGE ME***** *@
+
+@model LoginUser
+<div class="text-center">
+    <h1>Recipe Book</h1>
+    <form action="login" method="post">
+        <div class="form-group row p-1">
+            <label asp-for="UserName" class="col-sm-3 col-form-label">User Name: </label>
+            <input asp-for="UserName" class="col-sm-5">
+            <span asp-validation-for="UserName"></span>
+        </div>
+        <div class="form-group row p-1">
+            <label asp-for="Password" class="col-sm-3 col-form-label">Password: </label>
+            <input asp-for="Password" class="col-sm-5">
+            <span asp-validation-for="Password"></span>
+        </div>
+        <button>Login</button>
+    </form>
+    <h6>New? Register for your own book <a href="register">Here!</a></h6>
+</div>
