@@ -13,4 +13,12 @@ public class MyContext : DbContext
     // The name of our table in our database will be based on the name we provide here
     // This is where we provide a plural version of our model to fit table naming standards    
     public DbSet<User> Users { get; set; } 
+    public DbSet<Ingredient> Ingredients {get; set;}
+    public DbSet<Equipment> Equipment {get; set;}
+    public DbSet<Step> Directions {get; set;}
+    public DbSet<Recipe> Recipes {get; set;}
+    public DbSet<MealPlan> MealPlans {get; set;}
+    public DbSet<Meal> Meals {get; set;}
+    public DbSet<ShoppingList> ShoppingLists {get; set;}
+    public DbSet<Product> Products {get; set;}
 }

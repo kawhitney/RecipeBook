@@ -1,0 +1,121 @@
+@{
+    ViewData["Title"] = "Add Recipe";
+}
+@model Recipe
+@await Html.PartialAsync("_RecipeNav")
+
+<h1>@Model.Name</h1>
+<form action="update" method="post" class="d-flex flex-column">
+    <div class="d-flex flex-row">
+        <div class="d-flex flex-column col-md-8 m-2">
+            <label asp-for="Name">Recipe Name </label>
+            <input asp-for="Name" value="@Model.Name">
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="d-flex flex-column m-2">
+            <label asp-for="Category">Category </label>
+            <select asp-for="Category">
+                <option value="appetizers">Appetizers</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="soupsNstews">Soups and Stews</option>
+                <option value="mainDishes">Main Dishes</option>
+                <option value="sideDishes">Side Dishes</option>
+                <option value="breads">Breads</option>
+                <option value="desserts">Desserts</option>
+                <option value="drinks">Drinks</option>
+            </select>
+        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-around">
+        <div class="d-flex">
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-row">
+                    <label asp-for="Yield">Yield: </label>
+                    <input asp-for="Yield" value="@Model.Yield">
+                    <span asp-validation-for="Yield"></span>
+                </div>
+                <div class="d-flex flex-row">
+                    <label asp-for="Difficulty">Difficulty: </label>
+                    <select asp-for="Difficulty">
+                        <option value="@Model.Difficulty" selected disabled hidden>@Model.Difficulty</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                    <span asp-validation-for="Difficulty"></span>
+                </div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-row">
+                    <label>Prep. Time: </label>
+                    <input asp-for="PrepHr" type="number" value="@Model.PrepHr">
+                    <label asp-for="PrepHr">hr</label>
+                    <span asp-validation-for="PrepHr"></span>
+                    <input asp-for="PrepMin" type="number" value="@Model.PrepMin">
+                    <label asp-for="PrepMin">min</label>
+                    <span asp-validation-for="PrepMin"></span>
+                </div>
+                <div class="d-flex flex-row">
+                    <label>Cook Time: </label>
+                    <input asp-for="CookHr" type="number" value="@Model.CookHr">
+                    <label asp-for="CookHr">hr</label>
+                    <span asp-validation-for="CookHr"></span>
+                    <input asp-for="CookMin" type="number" value="@Model.CookMin">
+                    <label asp-for="CookMin">min</label>
+                    <span asp-validation-for="CookMin"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-row">
+        <div class="d-flex flex-column m-2">
+            <label asp-for="Equipment">Equipment List</label>
+            <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addEquipment">
+                        Add Equipment
+                    </button>
+        </div>
+        <div class="d-flex flex-column m-2">
+            <label asp-for="Ingredients">Ingredient List</label>
+            <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addIngredient">
+                        Add Ingredient
+                    </button>
+        </div>
+        <div class="d-flex flex-column m-2">
+            <label asp-for="Directions">Directions</label>
+            <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addStep">
+                        Add Step
+                    </button>
+        </div>
+    </div>
+    <button>Save Recipe</button>
+</form>
+
+<!-- Modal -->
+<div class="modal fade" id="addEquipment" tabindex="-1" role="dialog" aria-labelledby="addEquipmentTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            @await Html.PartialAsync("_AddEquipment")
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addIngredient" tabindex="-1" role="dialog" aria-labelledby="addIngredientTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            @await Html.PartialAsync("_AddIngredient")
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addStep" tabindex="-1" role="dialog" aria-labelledby="addStepTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            @await Html.PartialAsync("_AddStep")
+        </div>
+    </div>
+</div>

@@ -786,11 +786,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NightKing\\Documents\\CodingDojo\\RecipeBookApp\\RecipeBook\\RecipeBook.csproj",
+      "projectUniqueName": "C:\\Users\\NightKing\\Documents\\CodingDojo\\RecipeBook_App\\RecipeBook\\RecipeBook.csproj",
       "projectName": "RecipeBook",
-      "projectPath": "C:\\Users\\NightKing\\Documents\\CodingDojo\\RecipeBookApp\\RecipeBook\\RecipeBook.csproj",
+      "projectPath": "C:\\Users\\NightKing\\Documents\\CodingDojo\\RecipeBook_App\\RecipeBook\\RecipeBook.csproj",
       "packagesPath": "C:\\Users\\NightKing\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NightKing\\Documents\\CodingDojo\\RecipeBookApp\\RecipeBook\\obj\\",
+      "outputPath": "C:\\Users\\NightKing\\Documents\\CodingDojo\\RecipeBook_App\\RecipeBook\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\NightKing\\AppData\\Roaming\\NuGet\\NuGet.Config"

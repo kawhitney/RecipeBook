@@ -43,7 +43,7 @@ public class UserController : Controller
             HttpContext.Session.SetString("FamilyName", newUser.FamilyName);
             return RedirectToAction("Dashboard", "Home");
         }
-        return View("Index");
+        return View();
     }
 
     [HttpPost("login")]

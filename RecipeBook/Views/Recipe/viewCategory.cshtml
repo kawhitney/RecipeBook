@@ -1,0 +1,74 @@
+@{
+    switch(@ViewBag.Category){
+            case "appetizers":
+                ViewData["Title"] = "Appetizers";
+                break;
+            case "breakfast":
+                ViewData["Title"] = "Breakfast";
+                break;
+            case "soupsNstews":
+                ViewData["Title"] = "Soups and Stews";
+                break;
+            case "mainDishes":
+                ViewData["Title"] = "Main Dishes";
+                break;
+            case "sideDishes":
+                ViewData["Title"] = "Side Dishes";
+                break;
+            case "breads":
+                ViewData["Title"] = "Breads";
+                break;
+            case "desserts":
+                ViewData["Title"] = "Desserts";
+                break;
+            case "drinks":
+                ViewData["Title"] = "Drinks";
+                break;
+        }
+    
+}
+@model List<Recipe>
+
+@await Html.PartialAsync("_RecipeNav")
+
+<div class="d-flex boarder rounded">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Est. Time</th>
+                <th scope="col"># of Ingredients</th>
+                <th scope="col">Difficulty</th>
+                <th scope="col">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addRecipe">
+                        Add Recipe
+                    </button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Recipe r in Model){
+                <tr>
+                    <th scope="row">@r.Name</th>
+                    <td>@r.EstTime()</td>
+                    <td>@r.Ingredients.Count</td>
+                    <td>@r.Difficulty</td>
+                    <td>
+                        <a href="@r.ID/view">View</a>
+                        <a href="@r.ID/edit">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addRecipe" tabindex="-1" role="dialog" aria-labelledby="addRecipeTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            @await Html.PartialAsync("_AddRecipe")
+        </div>
+    </div>
+</div>

@@ -31,6 +31,12 @@ public class User {
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
+
+    // **** RELATIONSHIPS ****
+    //? Recipe
+    public List<Recipe> UserRecipes {get; set;} = new List<Recipe>();
+    //? MealPlan
+    public List<MealPlan> UserMealPlans {get; set;} = new List<MealPlan>();
 }
 
 public class UniqueEmailAttribute : ValidationAttribute {

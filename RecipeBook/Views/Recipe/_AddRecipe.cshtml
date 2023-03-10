@@ -1,0 +1,63 @@
+@* @model Recipe *@
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLongTitle">Add to the @Context.Session.GetString("FamilyName") Family Cookbook</h5>
+</div>
+<form action="add" method="post" class="row g-3">
+    <div class="modal-body mx-3 d-flex flex-column">
+        <!-- User ID -->
+        <input name="UserID" value=@Context.Session.GetInt32("uid") hidden>
+        <!-- Category -->
+        <input name="Category" value=@ViewBag.Category hidden>
+        <!-- Name -->
+        <div class="col">
+            <label for="Name" class="form-label">Recipe Name</label>
+            <input type="text" class="form-control" name="Name" minlength="2" required>
+        </div>
+        <div class="row">
+            <!-- Yield -->
+            <div class="col-md-4">
+                <label for="Yield" class="form-label">Yield</label>
+                <input type="text" class="form-control" name="Yield" minlength="2" required>
+            </div>
+            <!-- Difficult -->
+            <div class="col-md-5">
+                <label for="Difficulty" class="form-label">Difficulty</label>
+                <select class="form-select" name="Difficulty" required>
+                    <option selected disabled value="">-- select --</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+            </div>
+        </div>
+        <div class="col">
+            <div class="col-md-2">
+                <label>Prep. Time</label>
+                    <!-- PrepHr -->
+                    <input type="number" class="form-control" name="PrepHr" min="1">
+                    <label for="PrepHr" class="form-label">hr</label>
+                    <!-- PrepMin -->
+                    <input type="number" class="form-control" name="PrepMin" min="0" required>
+                    <label for="PrepMin" class="form-label">min</label>
+            </div>
+            <div class="col-md-2">
+                <label>Cook Time</label>
+                <!-- CookHr -->
+                <input type="number" class="form-control" name="CookHr" min="1">
+                <label for="CookHr" class="form-label">hr</label>
+                <!-- PrepMin -->
+                <input type="number" class="form-control" name="CookMin" min="0" required>
+                <label for="CookMin" class="form-label">min</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer col-12">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        
+        <button type="submit" class="btn btn-primary">Next Step</button>
+    </div>
+</form>
+
+
+

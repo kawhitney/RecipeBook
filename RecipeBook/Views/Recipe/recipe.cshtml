@@ -1,0 +1,10 @@
+@{
+    ViewData["Title"] = "Recipe Book";
+}
+
+@await Html.PartialAsync("_RecipeNav")
+
+<div class="d-flex flex-column text-center m-4">
+    <h1>Welcome to @Context.Session.GetString("FamilyName")'s Family Cookbook!</h1>
+    <h6>Select a Category to start viewing your saved recipes</h6>
+</div>

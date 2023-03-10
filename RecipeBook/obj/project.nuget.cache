@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vDGpyWokqNV8pXZB47eSsSQOEXt9Zt9PHDDKMTvg3UbWYPmlSCn1Urs/pNsPPIV7JSkAo/njlz2Hs0jRvIyNBw==",
+  "dgSpecHash": "XEMJE6L4TwMWQZSoy4KvnPL0u+dg3hvKlr6qoCBG4PLg3++nJ4Hotd9L+fxXY6QhRKvNKaOIzI/30kO3GppNZw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\NightKing\\Documents\\CodingDojo\\RecipeBookApp\\RecipeBook\\RecipeBook.csproj",
+  "projectFilePath": "C:\\Users\\NightKing\\Documents\\CodingDojo\\RecipeBook_App\\RecipeBook\\RecipeBook.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NightKing\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\NightKing\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",
