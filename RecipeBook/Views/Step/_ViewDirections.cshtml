@@ -1,0 +1,12 @@
+@model List<Step>
+<ul class="list-group">
+    @foreach(Step s in Model.OrderBy(s => s.Number).ToList()){
+        
+        <li class="list-group-item  list-group-item-action d-flex flex-row">
+            <div>@s.Number ) &ensp; @s.Direction</div>
+            <form action="/@s.ID/deleteStep" method="post" class="">
+                <button type="submit"class="btn btn-sm"style="background-color:transparent">&times;</button>
+            </form>
+        </li>
+    }
+</ul>

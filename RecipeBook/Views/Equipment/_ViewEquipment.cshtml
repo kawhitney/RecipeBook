@@ -1,0 +1,12 @@
+@model List<Equipment>
+
+<ul class="list-group">
+    @foreach(Equipment e in Model){
+        <li class="list-group-item list-group-item-action">
+            @e.Size @e.Type 
+            <form action="/@e.ID/deleteEquipment" method="post" class="">
+                <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
+            </form> 
+        </li>
+    }
+</ul>

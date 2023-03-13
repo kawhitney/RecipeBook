@@ -22,7 +22,23 @@ public class RecipeController : Controller
         return View();
     }
 
-    // **** view category of recipe ****
+    //! CREATE
+    // *** new recipe ***
+    [HttpPost("recipe/add")]
+    public IActionResult CreateRecipe(Recipe recipe){
+        // Console.WriteLine($"======= Creating =======\n\tRecipe:{recipe.Difficulty}\n\tModelState:{ModelState.IsValid}");
+        if(ModelState.IsValid){
+            // Console.WriteLine($"======= Valid =======");
+            _context.Recipes.Add(recipe);
+            _context.SaveChanges();
+            return Redirect($"{recipe.ID}/edit");
+        }
+        // Console.WriteLine($"======= InValid =======");
+        return Redirect($"{recipe.Category}");
+    }
+
+    //! READ
+    // **** view all recipes in a category ****
     [SessionCheck]
     [HttpGet("recipe/{category}")]
     public IActionResult ViewCategory(string category){
@@ -37,53 +53,16 @@ public class RecipeController : Controller
             case "desserts":
             case "drinks":
                 recipes = _context.Recipes
-                        .Where(r => r.Category == category).ToList();
+                        .Where(r => r.Category == category)
+                        .Where(r => r.UserID == HttpContext.Session.GetInt32("uid"))
+                        .ToList();
                 ViewBag.Category = category;
                 return View(recipes);
             default:
                 return RedirectToAction("Recipe");
         }
     }
-
-    // *** create a new recipe ***
-    [HttpPost("recipe/add")]
-    public IActionResult CreateRecipe(Recipe recipe){
-        // Console.WriteLine($"======= Creating =======\n\tRecipe:{recipe.Difficulty}\n\tModelState:{ModelState.IsValid}");
-        if(ModelState.IsValid){
-            // Console.WriteLine($"======= Valid =======");
-            _context.Recipes.Add(recipe);
-            _context.SaveChanges();
-            return Redirect($"{recipe.ID}/edit");
-        }
-        // Console.WriteLine($"======= InValid =======");
-        return Redirect($"{recipe.Category}");
-    }
-
-    // *** add equipment to recipe equipment list ***
-    [HttpPost("recipe/{recipeId}/addEquipment")]
-    public IActionResult AddEquipment(Equipment equipment, int recipeId){
-        if(ModelState.IsValid){
-        Console.WriteLine($"======= Valid =======");
-            _context.Equipment.Add(equipment);
-            _context.SaveChanges();
-        }
-        Console.WriteLine($"======= Invalid =======");
-        return Redirect($"{recipeId}/edit");
-    }
-
-    // *** add ingredient to recipe ingredient list ***
-    [HttpPost("recipe/{recipeId}/addIngredient")]
-    public IActionResult AddIngredient(Recipe recipe, int recipeId){
-        return Redirect($"{recipeId}/edit");
-    }
-
-    // *** add step to recipe directions ***
-        [HttpPost("recipe/{recipeId}/addStep")]
-    public IActionResult AddStep(Recipe recipe, int recipeId){
-        return Redirect($"{recipeId}/edit");
-    }
-
-    // *** read single recipe ***
+    // *** view single recipe ***
     [SessionCheck]
     [HttpGet("/recipe/{recipeId}/view")]
     public IActionResult ViewRecipe(int recipeId){
@@ -98,7 +77,8 @@ public class RecipeController : Controller
         return View(item);
     }
 
-    // *** update a recipe ***
+    //! Update
+    // *** edit a recipe ***
     [SessionCheck]
     [HttpGet("recipe/{recipeId}/edit")]
     public IActionResult EditRecipe(int recipeId){
@@ -115,11 +95,9 @@ public class RecipeController : Controller
 
     [HttpPost("recipe/{recipeId}/update")]
     public IActionResult UpdateRecipe(Recipe recipe, int recipeId){
+        Console.WriteLine($"\n=====HERE=====\n");
         if(ModelState.IsValid){
             Recipe? item = _context.Recipes
-                            .Include(i => i.Ingredients)
-                            .Include(i => i.Equipment)
-                            .Include(i => i.Directions)
                             .FirstOrDefault(i => i.ID == recipeId);
             item.Category = recipe.Category;
             item.Name = recipe.Name;
@@ -134,4 +112,10 @@ public class RecipeController : Controller
         }
         return Redirect("edit");
     }
+
+    //! DELETE
+    // *** remove a recipe ***
+
+    // *** remove equipment from recipe equipment list ***
+
 }

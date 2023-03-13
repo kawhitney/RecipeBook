@@ -5,7 +5,7 @@
 @await Html.PartialAsync("_RecipeNav")
 
 <h1>@Model.Name</h1>
-<form action="update" method="post" class="d-flex flex-column">
+<form action="update" method="post" id="editForm" class="d-flex flex-column">
     <div class="d-flex flex-row">
         <div class="d-flex flex-column col-md-8 m-2">
             <label asp-for="Name">Recipe Name </label>
@@ -67,37 +67,46 @@
             </div>
         </div>
     </div>
-    <div class="d-flex flex-row">
-        <div class="d-flex flex-column m-2">
-            <label asp-for="Equipment">Equipment List</label>
-            <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addEquipment">
-                        Add Equipment
-                    </button>
-        </div>
-        <div class="d-flex flex-column m-2">
-            <label asp-for="Ingredients">Ingredient List</label>
-            <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addIngredient">
-                        Add Ingredient
-                    </button>
-        </div>
-        <div class="d-flex flex-column m-2">
-            <label asp-for="Directions">Directions</label>
-            <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addStep">
-                        Add Step
-                    </button>
-        </div>
-    </div>
-    <button>Save Recipe</button>
 </form>
+<div class="d-flex flex-row justify-content-around">
+    <div class="d-flex flex-column m-2">
+        <label asp-for="Equipment">Equipment List</label>
+        <div class="containter">
+            @await Html.PartialAsync("../Equipment/_ViewEquipment", @Model.Equipment)
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addEquipment">
+            Add Equipment
+        </button>
+    </div>
+    <div class="d-flex flex-column m-2">
+        <label asp-for="Ingredients">Ingredient List</label>
+        <div class="d-flex">
+            @await Html.PartialAsync("../Ingredient/_ViewIngredients", @Model.Ingredients)
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addIngredient">
+            Add Ingredient
+        </button>
+    </div>
+    <div class="d-flex flex-column m-2">
+        <label asp-for="Directions">Directions</label>
+        <div class="d-flex containter-sm">
+            @await Html.PartialAsync("../Step/_ViewDirections", @Model.Directions)
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addStep">
+            Add Step
+        </button>
+    </div>
+</div>
+<button type="submit" form="editForm" value="Submit">Save Recipe</button>
 
 <!-- Modal -->
 <div class="modal fade" id="addEquipment" tabindex="-1" role="dialog" aria-labelledby="addEquipmentTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            @await Html.PartialAsync("_AddEquipment")
+        <div class="modal-content d-flex flex-column">
+            @await Html.PartialAsync("../Equipment/_AddEquipment")
         </div>
     </div>
 </div>
@@ -105,8 +114,8 @@
 <!-- Modal -->
 <div class="modal fade" id="addIngredient" tabindex="-1" role="dialog" aria-labelledby="addIngredientTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            @await Html.PartialAsync("_AddIngredient")
+        <div class="modal-content d-flex flex-column">
+            @await Html.PartialAsync("../Ingredient/_AddIngredient")
         </div>
     </div>
 </div>
@@ -115,7 +124,7 @@
 <div class="modal fade" id="addStep" tabindex="-1" role="dialog" aria-labelledby="addStepTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            @await Html.PartialAsync("_AddStep")
+            @await Html.PartialAsync("../Step/_AddStep")
         </div>
     </div>
 </div>

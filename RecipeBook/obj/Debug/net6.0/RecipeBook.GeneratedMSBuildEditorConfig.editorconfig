@@ -15,12 +15,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\NightKing\Documents\CodingDojo\RecipeBook_App\RecipeBook
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Equipment/_AddEquipment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50XF9BZGRFcXVpcG1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Equipment/_ViewEquipment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50XF9WaWV3RXF1aXBtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Home/dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxkYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Ingredient/_AddIngredient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVkaWVudFxfQWRkSW5ncmVkaWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Ingredient/_ViewIngredients.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVkaWVudFxfVmlld0luZ3JlZGllbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/editRecipe.cshtml]
@@ -39,20 +55,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlXHZpZXdSZWNpcGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/_AddEquipment.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlXF9BZGRFcXVpcG1lbnQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/_AddIngredient.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlXF9BZGRJbmdyZWRpZW50LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/_AddRecipe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlXF9BZGRSZWNpcGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/_AddStep.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlXF9BZGRTdGVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/_RecipeNav.cshtml]
@@ -67,8 +71,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/User/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxpbmRleC5jc2h0bWw=
+[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Step/_AddStep.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RlcFxfQWRkU3RlcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Step/_ViewDirections.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RlcFxfVmlld0RpcmVjdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/User/register.cshtml]
