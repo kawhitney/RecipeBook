@@ -18,12 +18,12 @@ public class Recipe{
     [Range(1, int.MaxValue)]
     public int? PrepHr {get; set;}
     [Required]
-    [Range(1, int.MaxValue)]
+    [Range(0, int.MaxValue)]
     public int PrepMin {get; set;}
     [Range(1, int.MaxValue)]
     public int? CookHr {get; set;}
     [Required]
-    [Range(1, int.MaxValue)]
+    [Range(0, int.MaxValue)]
     public int CookMin {get; set;}
     [Required]
     public string Difficulty {get; set;}

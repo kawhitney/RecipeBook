@@ -26,14 +26,13 @@ public class RecipeController : Controller
     // *** new recipe ***
     [HttpPost("recipe/add")]
     public IActionResult CreateRecipe(Recipe recipe){
-        // Console.WriteLine($"======= Creating =======\n\tRecipe:{recipe.Difficulty}\n\tModelState:{ModelState.IsValid}");
+        Console.WriteLine($"======= Category {recipe.Category} =======");
         if(ModelState.IsValid){
-            // Console.WriteLine($"======= Valid =======");
             _context.Recipes.Add(recipe);
             _context.SaveChanges();
             return Redirect($"{recipe.ID}/edit");
         }
-        // Console.WriteLine($"======= InValid =======");
+        Console.WriteLine($"======= InValid =======");
         return Redirect($"{recipe.Category}");
     }
 
