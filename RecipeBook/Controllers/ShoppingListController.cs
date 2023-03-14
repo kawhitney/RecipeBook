@@ -14,4 +14,6 @@ public class ShoppingListController : Controller
     {
         _context = context;
     }
+
+    // [HttpGet("mealPlan/{mpId}/shoppingList")]
 }
