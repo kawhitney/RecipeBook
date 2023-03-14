@@ -19,6 +19,6 @@ public class MealPlan{
     User? User {get; set;}
     //? meal
     public List<Meal> Meals {get; set;} = new List<Meal>();
-    // shopping list
+    //? shopping list
     public ShoppingList? ShoppingList {get; set;}
 }

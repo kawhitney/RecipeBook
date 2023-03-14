@@ -1,0 +1,96 @@
+@{
+    ViewData["Title"] = "Edit Meal Plan";
+}
+@model MyViewModel
+<h2>@Model.MealPlan.Name Weekly Meal Plan</h2>
+<form action="update" method="post" id="editMealForm">
+    <label asp-for="MealPlan.Name"></label>
+    <input asp-for="MealPlan.Name" value="@Model.MealPlan.Name">
+    <input asp-for="MealPlan.Favorite" type="checkbox">
+    <label asp-for="MealPlan.Favorite" value="@Model.MealPlan.Favorite">Favorite?</label>
+</form>
+
+<div class="d-flex flex-row justify-content-around">
+    <div class="d-flex flex-column m-2">
+        <label>Monday</label>
+        <div class="containter">
+            
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal">
+            Add Meal
+        </button>
+    </div>
+    <div class="d-flex flex-column m-2">
+        <label>Tuesday</label>
+        <div class="containter">
+            
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal">
+            Add Meal
+        </button>
+    </div>
+    <div class="d-flex flex-column m-2">
+        <label>Wednesday</label>
+        <div class="containter">
+            
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal">
+            Add Meal
+        </button>
+    </div>
+    <div class="d-flex flex-column m-2">
+        <label>Thursday</label>
+        <div class="containter">
+            
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal">
+            Add Meal
+        </button>
+    </div>
+    <div class="d-flex flex-column m-2">
+        <label>Friday</label>
+        <div class="containter">
+            
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal">
+            Add Meal
+        </button>
+    </div>
+    <div class="d-flex flex-column m-2">
+        <label>Saturday</label>
+        <div class="containter">
+            
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal">
+            Add Meal
+        </button>
+    </div>
+    <div class="d-flex flex-column m-2">
+        <label>Sunday</label>
+        <div class="containter">
+            
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal">
+            Add Meal
+        </button>
+    </div>
+</div>
+
+<button type="submit" form="editMealForm" value="Submit">Save Recipe</button>
+<form action="deleteRecipe"><button class="btn btn-danger">Delete</button></form>
+
+<!-- Modal -->
+<div class="modal fade" id="addMeal" tabindex="-1" role="dialog" aria-labelledby="addMealTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            @await Html.PartialAsync("../Meal/_AddMeal.cshtml", Model)
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+@model List<MealPlan>
+<table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Favorite</th>
+        <th scope="col">Name</th>
+        <th scope="col">Number of Meals</th>
+        <th scope="col">Created</th>
+        <th scope="col">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMP">
+                Add Meal Plan
+            </button>
+        </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(MealPlan m in Model){
+        <tr>
+            @if(m.Favorite){<th scope="row">&#x26B9;</th>}
+            else{<th scope="row"></th>}
+            <td>@m.Name</td>
+            <td>@m.Meals.Count</td>
+            <td></td>
+            <td><a href="mealplan/@m.ID/edit">View</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="addMP" tabindex="-1" role="dialog" aria-labelledby="addMealPlanTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content d-flex flex-column">
+            @await Html.PartialAsync("_AddMP")
+        </div>
+    </div>
+</div>

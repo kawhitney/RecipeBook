@@ -8,93 +8,121 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RecipeBook
 build_property.RootNamespace = RecipeBook
-build_property.ProjectDir = C:\Users\NightKing\Documents\CodingDojo\RecipeBook_App\RecipeBook\
+build_property.ProjectDir = c:\Users\NightKing\Documents\CodingDojo\RecipeBook_App\RecipeBook\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\NightKing\Documents\CodingDojo\RecipeBook_App\RecipeBook
+build_property.MSBuildProjectDirectory = c:\Users\NightKing\Documents\CodingDojo\RecipeBook_App\RecipeBook
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Equipment/_AddEquipment.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Equipment/_AddEquipment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50XF9BZGRFcXVpcG1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Equipment/_ViewEquipment.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Equipment/_ViewEquipment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50XF9WaWV3RXF1aXBtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Home/dashboard.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Home/dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxkYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Home/Privacy.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Ingredient/_AddIngredient.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Ingredient/_AddIngredient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVkaWVudFxfQWRkSW5ncmVkaWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Ingredient/_ViewIngredients.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Ingredient/_ViewIngredients.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVkaWVudFxfVmlld0luZ3JlZGllbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/editRecipe.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/MealPlan/editMP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFBsYW5cZWRpdE1QLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/MealPlan/mealPlans.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFBsYW5cbWVhbFBsYW5zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/MealPlan/mpFavorite.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFBsYW5cbXBGYXZvcml0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/MealPlan/_AddMP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFBsYW5cX0FkZE1QLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/MealPlan/_MPNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFBsYW5cX01QTmF2LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/MealPlan/_ViewPlans.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFBsYW5cX1ZpZXdQbGFucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Meal/_AddMeal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFxfQWRkTWVhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/editRecipe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlXGVkaXRSZWNpcGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/recipe.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/recipe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlXHJlY2lwZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/viewCategory.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/viewCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlXHZpZXdDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/viewRecipe.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/viewRecipe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlXHZpZXdSZWNpcGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/_AddRecipe.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/_AddRecipe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlXF9BZGRSZWNpcGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/_RecipeNav.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Recipe/_RecipeNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlXF9SZWNpcGVOYXYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Shared/Error.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Step/_AddStep.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Step/_AddStep.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RlcFxfQWRkU3RlcC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Step/_ViewDirections.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Step/_ViewDirections.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RlcFxfVmlld0RpcmVjdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/User/Index.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/User/register.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/User/register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxyZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/_ViewImports.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/_ViewStart.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Shared/_Layout.cshtml]
+[c:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ogvj845dys

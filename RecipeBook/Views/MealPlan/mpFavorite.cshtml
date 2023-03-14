@@ -1,0 +1,6 @@
+@{
+    ViewData["Title"] = "Favorite Meal Plans";
+}
+@model List<MealPlan>
+@await Html.PartialAsync("_MPNav")
+@await Html.PartialAsync("_ViewPlans", Model)

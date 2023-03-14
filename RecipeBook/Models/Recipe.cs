@@ -58,8 +58,9 @@ public class Recipe{
             min -= 60;
             hr++;
         }
-        Console.WriteLine($"Hr: {hr}\tMin: {min} (kw)");
-
+        if(hr == 0){
+            return min + " min";
+        }
         return hr + " hr " + min + " min";
     }
 }

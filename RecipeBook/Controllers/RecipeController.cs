@@ -95,7 +95,6 @@ public class RecipeController : Controller
 
     [HttpPost("recipe/{recipeId}/update")]
     public IActionResult UpdateRecipe(Recipe recipe, int recipeId){
-        Console.WriteLine($"\n=====HERE=====\n");
         if(ModelState.IsValid){
             Recipe? item = _context.Recipes
                             .FirstOrDefault(i => i.ID == recipeId);
@@ -107,6 +106,7 @@ public class RecipeController : Controller
             item.CookHr = recipe.CookHr;
             item.CookMin = recipe.CookMin;
             item.Difficulty = recipe.Difficulty;
+            item.UpdatedAt = DateTime.Now;
             _context.Recipes.Update(item);
             _context.SaveChanges();
         }
