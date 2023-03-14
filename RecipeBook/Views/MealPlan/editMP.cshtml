@@ -6,8 +6,15 @@
 <form action="update" method="post" id="editMealForm">
     <label for="Name"></label>
     <input name="Name" value="@Model.MealPlan.Name">
-    <input for="Favorite" type="checkbox">
-    <label name="Favorite" value="@Model.MealPlan.Favorite">Favorite?</label>
+    @if(@Model.MealPlan.Favorite){
+        <input id="Favorite" name="Favorite" type="checkbox" value="true" checked>
+        <input type="hidden" value="false" name="Favorite">
+    }
+    else{
+        <input id="Favorite" name="Favorite" type="checkbox" value="true">
+        <input type="hidden" value="false" name="Favorite">
+    }
+    <label for="Favorite">Favorite?</label>
 </form>
 
 <div class="d-flex flex-row justify-content-around">

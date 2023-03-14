@@ -9,7 +9,7 @@ public class MealPlan{
     public int ID {get; set;}
     [Required]
     public string Name {get; set;}
-    public bool Favorite {get; set;} = false;
+    public bool Favorite {get; set;} 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 

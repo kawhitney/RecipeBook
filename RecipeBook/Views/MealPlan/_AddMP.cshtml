@@ -3,6 +3,7 @@
 </div>
 <form action="mealplan/add" method="post" class="row g-3">
     <input name="UserID" value="@Context.Session.GetInt32("uid")" hidden>
+    <input name="Favorite" type="checkbox" value="False" hidden>
     <div class="modal-body mx-3 d-flex flex-column">
         <label for="Name">Meal Plan Name:</label>
         <input name="Name" type="text">
