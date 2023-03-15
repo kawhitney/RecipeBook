@@ -23,7 +23,8 @@ public class MealPlanController : Controller
         if(ModelState.IsValid){
             _context.MealPlans.Add(mp);
             _context.SaveChanges();
-            return Redirect($"{mp.ID}/edit");
+            // return Redirect($"{mp.ID}/edit");
+            return Redirect($"/mealplan/{mp.ID}/shoppingList/create");
         }
         return Redirect("/mealplan");
     }
@@ -98,8 +99,9 @@ public class MealPlanController : Controller
             item.UpdatedAt = DateTime.Now;
             _context.MealPlans.Update(item);
             _context.SaveChanges();
+            return Redirect($"/mealplan/{item.ID}/shoppingList/create");
         }
-        return Redirect("edit");
+        return RedirectToAction("MealPlans");
     }
 
     //! DELETE

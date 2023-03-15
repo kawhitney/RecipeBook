@@ -33,9 +33,10 @@ public class Product{
     }
 
     public Product(){}
-    public Product(string name, int amt){
+    public Product(string name, int amt, int slID){
         this.Name = name;
         this.Amount = amt;
         this.TimesAdded = 1;
+        this.ShoppingListID = slID;
     }
 }
