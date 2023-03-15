@@ -14,4 +14,23 @@ public class ProductController : Controller
     {
         _context = context;
     }
+
+    //! CREATE
+    //! READ
+    //! UPDATE
+    //! DELETE
+    [HttpPost("product/{productId}/delete")]
+    public IActionResult DeleteProd(int productId){
+        Product? itemToDelete = _context.Products.SingleOrDefault(i=>i.ID == productId);
+        if(itemToDelete != null){
+            int shoppingList = itemToDelete.ShoppingListID;
+            // delete product
+            _context.Products.Remove(itemToDelete);
+            _context.SaveChanges();
+            // return to shopping list
+            return Redirect($"/shoppingList/{shoppingList}");
+        }
+        return Redirect("/mealplan");
+    }
+
 }

@@ -47,8 +47,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFBsYW5cbWVhbFBsYW5zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/MealPlan/mpFavorite.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFBsYW5cbXBGYXZvcml0ZS5jc2h0bWw=
+[C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/MealPlan/mpFavorites.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbFBsYW5cbXBGYXZvcml0ZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NightKing/Documents/CodingDojo/RecipeBook_App/RecipeBook/Views/MealPlan/_AddMP.cshtml]

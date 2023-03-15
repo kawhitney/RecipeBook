@@ -17,4 +17,9 @@ public class ShoppingList{
 
     // product
     public List<Product> Products {get; set;} = new List<Product>();
+
+    public ShoppingList(){}
+    public ShoppingList(int mpId){
+        this.MealPlanID = mpId;
+    }
 }

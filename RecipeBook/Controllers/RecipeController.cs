@@ -52,6 +52,7 @@ public class RecipeController : Controller
                 recipes = _context.Recipes
                         .Where(r => r.Category == category)
                         .Where(r => r.UserID == HttpContext.Session.GetInt32("uid"))
+                        .Include(i=>i.Ingredients)
                         .ToList();
                 ViewBag.Category = category;
                 return View(recipes);
@@ -112,7 +113,36 @@ public class RecipeController : Controller
 
     //! DELETE
     // *** remove a recipe ***
-
-    // *** remove equipment from recipe equipment list ***
+    [HttpPost("recipe/{recipeId}/delete")]
+    public IActionResult DeleteRecipe(int recipeId){
+        Recipe? itemToDelete = _context.Recipes
+                                .Include(i=>i.Directions)
+                                .Include(i=>i.Equipment)
+                                .Include(i=>i.Ingredients)
+                                .Include(i=>i.Meals)
+                                .SingleOrDefault(i=>i.ID == recipeId);
+        if(itemToDelete != null){
+            // delete all directions
+            foreach(Step s in itemToDelete.Directions){
+                _context.Directions.Remove(s);
+            }
+            // delete all equipment
+            foreach(Equipment e in itemToDelete.Equipment){
+                _context.Equipment.Remove(e);
+            }
+            // delete all ingredients
+            foreach(Ingredient i in itemToDelete.Ingredients){
+                _context.Ingredients.Remove(i);
+            }
+            // delete all associated meals
+            foreach(Meal m in itemToDelete.Meals){
+                _context.Meals.Remove(m);
+            }
+            // delete recipe
+            _context.Recipes.Remove(itemToDelete);
+            _context.SaveChanges();
+        }
+        return Redirect("/recipe");
+    }
 
 }

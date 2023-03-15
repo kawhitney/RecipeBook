@@ -89,7 +89,6 @@ public class MealPlanController : Controller
     }
     [HttpPost("mealplan/{mealPlanId}/update")]
     public IActionResult UpdateMP(MealPlan mp, int mealPlanId){
-        Console.WriteLine($"\n=====HERE=====\n");
         Console.WriteLine($"MP: {mp.Favorite} {mp.Name} (kw)");
         if(ModelState.IsValid){
             MealPlan? item = _context.MealPlans
@@ -100,16 +99,30 @@ public class MealPlanController : Controller
             _context.MealPlans.Update(item);
             _context.SaveChanges();
         }
-        Console.WriteLine($"\n====={ModelState.IsValid}=====\n");
         return Redirect("edit");
     }
 
     //! DELETE
     [HttpPost("mealplan/{mealPlanId}/delete")]
     public IActionResult DeleteMP(int mealPlanId){
-        // delete shopping list
-        // delete meal link(s)
-        // delete mealplan
-        return View(); //! CHANGE ME
+        MealPlan? itemToDelete = _context.MealPlans
+                                .Include(i=>i.Meals)
+                                .Include(i=>i.ShoppingList)
+                                .SingleOrDefault(i=>i.ID == mealPlanId);
+        if(itemToDelete != null){
+            int? shoppingList = itemToDelete.ShoppingList.ID;
+            // delete meal link(s)
+            foreach(Meal m in itemToDelete.Meals){
+                _context.Meals.Remove(m);
+            }
+            // delete meal plan
+            _context.MealPlans.Remove(itemToDelete);
+            _context.SaveChanges();
+            // delete shopping list
+            if(shoppingList != null){
+                return Redirect($"/shoppingList/{shoppingList}/delete");
+            }
+        }       
+        return Redirect("/mealplan"); 
     }
 }

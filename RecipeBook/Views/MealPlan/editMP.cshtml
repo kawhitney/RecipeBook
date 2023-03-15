@@ -8,12 +8,11 @@
     <input name="Name" value="@Model.MealPlan.Name">
     @if(@Model.MealPlan.Favorite){
         <input id="Favorite" name="Favorite" type="checkbox" value="true" checked>
-        <input type="hidden" value="false" name="Favorite">
     }
     else{
         <input id="Favorite" name="Favorite" type="checkbox" value="true">
-        <input type="hidden" value="false" name="Favorite">
     }
+    <input type="hidden" value="false" name="Favorite">
     <label for="Favorite">Favorite?</label>
 </form>
 
@@ -169,7 +168,7 @@
 </div>
 
 <button type="submit" form="editMealForm" value="Submit">Save Meal Plan</button>
-<form action="deleteRecipe"><button class="btn btn-danger">Delete</button></form>
+<form action="delete" method="post"><button class="btn btn-danger">Delete</button></form>
 
 <!-- Monday Modal -->
 <div class="modal fade" id="addMeal1" tabindex="-1" role="dialog" aria-labelledby="addMealTitle" aria-hidden="true">

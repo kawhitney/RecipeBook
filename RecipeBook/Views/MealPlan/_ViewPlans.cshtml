@@ -21,7 +21,7 @@
             else{<th scope="row"></th>}
             <td>@m.Name</td>
             <td>@m.Meals.Count</td>
-            <td></td>
+            <td>@m.CreatedAt.ToString("MM/dd/yyyy")</td>
             <td><a href="mealplan/@m.ID/edit">View</a></td>
         </tr>
         }

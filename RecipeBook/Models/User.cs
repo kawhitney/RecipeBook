@@ -22,6 +22,8 @@ public class User {
     [DataType(DataType.PhoneNumber)]
     public long PhoneNumber {get; set;}
     [Required]
+    [MinLength(10)]
+    [MaxLength(10)]
     [DataType(DataType.Password)]
     public string Password {get; set;}
     [NotMapped]
