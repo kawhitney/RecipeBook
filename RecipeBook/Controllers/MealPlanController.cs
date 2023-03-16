@@ -99,7 +99,7 @@ public class MealPlanController : Controller
             item.UpdatedAt = DateTime.Now;
             _context.MealPlans.Update(item);
             _context.SaveChanges();
-            return Redirect($"/mealplan/{item.ID}/shoppingList/create");
+            return Redirect($"/mealplan/{mealPlanId}/edit");
         }
         return RedirectToAction("MealPlans");
     }
@@ -113,6 +113,9 @@ public class MealPlanController : Controller
                                 .SingleOrDefault(i=>i.ID == mealPlanId);
         if(itemToDelete != null){
             int? shoppingList = itemToDelete.ShoppingList.ID;
+            Console.WriteLine(new String('=', 20));
+            Console.WriteLine($"shoppingListID: {shoppingList}");
+            Console.WriteLine(new String('=', 20));
             // delete meal link(s)
             foreach(Meal m in itemToDelete.Meals){
                 _context.Meals.Remove(m);

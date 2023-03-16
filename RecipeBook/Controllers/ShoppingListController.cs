@@ -35,8 +35,8 @@ public class ShoppingListController : Controller
     }
 
     //! READ
-    [HttpGet("/shoppingList/{slId}")]
-    public IActionResult ShoppingList(int slId){
+    [HttpGet("/shoppingList/{slId}/view")]
+    public IActionResult ViewSL(int slId){
         ShoppingList? sl = _context.ShoppingLists
                             .Include(i=>i.Products)
                             .FirstOrDefault(i=>i.ID == slId);
@@ -45,10 +45,11 @@ public class ShoppingListController : Controller
         }     
         return View(sl);
     }
+
     //! UPDATE
-    [HttpGet("mealplan/{mpId}/shoppingList/{action}/update")]
+    [HttpGet("mealplan/{mpId}/shoppingList/update")]
     //# NOTE: the action is pass in to determine which page the updateSL will redirect to (-1 is reserved to force default action)
-    public IActionResult UpdateSL(int mpId, int action){
+    public IActionResult UpdateSL(int mpId){
         // get meal plan
         MealPlan? mealplan = _context.MealPlans
                             .Include(i=>i.Meals)
@@ -84,22 +85,14 @@ public class ShoppingListController : Controller
                 }
             }
             _context.SaveChanges();
+            return RedirectToAction("ViewSL", slID);
         }
-        else{
-            action = -1; // to trigger default
-        }
-        switch(action){
-            case 1: // go to shopping list view
-                return RedirectToAction("ViewSL", slID);
-            case 2: // to edit mp page
-                return Redirect($"/mealplan/{mpId}/edit");
-            default:
-                return Redirect("/mealplan");
-        }
+        //# For null value only
+        return Redirect("/mealplan");
     }
 
     //! DELETE
-    [HttpPost("shoppingList/{slId}/delete")]
+    [HttpGet("shoppingList/{slId}/delete")]
     public IActionResult DeleteSL(int slId){
         // find all products in shopping list
         ShoppingList? sl = _context.ShoppingLists
@@ -115,6 +108,9 @@ public class ShoppingListController : Controller
             _context.ShoppingLists.Remove(sl);
             _context.SaveChanges();
         }
+        Console.WriteLine(new String('=', 20));
+        Console.WriteLine($"Leaving DeleteSL");
+        Console.WriteLine(new String('=', 20));
         // return to all meal plans
         return Redirect("/mealplan");
     }
