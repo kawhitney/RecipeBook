@@ -48,11 +48,12 @@ public class ProductController : Controller
                     foreach(Ingredient i in m.Recipe.Ingredients){
                         // grab product if it exists
                         Product? product = _context.Products
+                                            .Where(p=> p.ShoppingListID == sl.ID)
                                             .SingleOrDefault(p=> p.Name == i.Type);
                         // if product name does not exist
                         if(product == null){
                             // make new product
-                            if(i.QuantityType == " "){
+                            if(i.QuantityType == "count"){
                                 product = new Product(
                                         i.Type,
                                         0,
@@ -81,18 +82,18 @@ public class ProductController : Controller
             // redirect to shopping list
             return Redirect($"/shoppingList/{sl.ID}/view");
         }
-                Console.WriteLine(new String('=', 20));
-        Console.WriteLine($"ABORTING PRODUCTS");
-        Console.WriteLine(new String('=', 20));
+        //         Console.WriteLine(new String('=', 20));
+        // Console.WriteLine($"ABORTING PRODUCTS");
+        // Console.WriteLine(new String('=', 20));
         return Redirect("/mealplan");
     }
 
     //! DELETE
     [HttpGet("product/{productId}/delete")]
     public IActionResult DeleteProd(int productId){
-        Console.WriteLine(new String('=', 20));
-        Console.WriteLine($"MADE IT TO DELETE");
-        Console.WriteLine(new String('=', 20));
+        // Console.WriteLine(new String('=', 20));
+        // Console.WriteLine($"MADE IT TO DELETE");
+        // Console.WriteLine(new String('=', 20));
         Product? itemToDelete = _context.Products.SingleOrDefault(i=>i.ID == productId);
         if(itemToDelete != null){
             int shoppingList = itemToDelete.ShoppingListID;

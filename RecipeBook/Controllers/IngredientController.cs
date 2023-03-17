@@ -19,6 +19,10 @@ public class IngredientController : Controller
     // *** new ingredient to recipe ingredient list ***
     [HttpPost("addIngredient")]
     public IActionResult AddIngredient(Ingredient ingredient){
+        Console.WriteLine(new String('=', 20));
+        Console.WriteLine($"State: {ModelState.IsValid}");
+        Console.WriteLine($"Ingredient: \n\t{ingredient.Type}\n\t{ingredient.Style}\n\t{ingredient.QuantityAmount}\n\t{ingredient.QuantityType}\n\t (kw)");
+        Console.WriteLine(new String('=', 20));
         if(ModelState.IsValid){
             _context.Ingredients.Add(ingredient);
             _context.SaveChanges();

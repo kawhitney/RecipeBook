@@ -3,5 +3,58 @@
 }
 @model Recipe
 
-<h3>@Model.Name</h3>
 <a href="/recipe/@Model.Category">Back</a>
+<h1 class="border-bottom my-3">@Model.Name</h1  class="border-bottom my-3">
+
+<div class="d-flex flex-column mx-4">
+    <div class="d-flex flex-row">
+        <div class="d-flex flex-column me-5">
+            <h4 class="border-bottom my-2">Equipment</h4>
+            <ul style="list-style-type: none;">
+                @foreach(Equipment e in Model.Equipment){
+                    <li class="checkbox d-flex flex-row align-items-start">
+                            <input type="checkbox" name="packersOff" value="1" class="mt-1 me-3">
+                            <label style="width: fit-content;" class="strikethrough">
+                                @e.Size @e.Type
+                            </label>
+                    </li>
+                }
+            </ul>
+        </div>
+    
+        <div class="d-flex flex-column">
+            <h4 class="border-bottom my-2">Ingredients</h4>
+            <ul style="list-style-type: none;">
+                @foreach(Ingredient i in Model.Ingredients){
+                    <li class="checkbox d-flex flex-row align-items-start">
+                            <input type="checkbox" name="packersOff" value="1" class="mt-1 me-3">
+                            <label style="width: fit-content;" class="strikethrough">
+                                @i.QuantityAmount @i.QuantityType of
+                                @if(@i.Style != "See Directions"){
+                                    @i.Style
+                                }
+                                @i.Type
+                            </label>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    
+    <h4 class="border-bottom my-2">Directions</h4>
+    <ul style="list-style-type: none;">
+        @foreach(Step s in Model.Directions.OrderBy(s => s.Number).ToList()){
+            <li class="checkbox d-flex flex-row align-items-start mb-1">
+                    <input type="checkbox" name="packersOff" value="1" class="mt-1 me-3">
+                    <label style="width: fit-content;" class="strikethrough">@s.Number ) &ensp;@s.Direction</label>
+            </li>
+        }
+    </ul>
+</div>
+
+@* REFERENCE: http://www.java2s.com/example/html-css/html-tag/add-strikethrough-to-checked-checkbox.html *@
+<style id="compiled-css" type="text/css">
+    input[type=checkbox]:checked + label.strikethrough {
+        text-decoration:line-through; <!--from www.java2s.com-->
+    }
+</style>

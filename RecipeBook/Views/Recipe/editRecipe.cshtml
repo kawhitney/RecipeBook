@@ -4,104 +4,115 @@
 @model Recipe
 @await Html.PartialAsync("_RecipeNav")
 
-<h1>@Model.Name</h1>
-<form action="update" method="post" id="editForm" class="d-flex flex-column">
-    <div class="d-flex flex-row">
-        <div class="d-flex flex-column col-md-8 m-2">
-            <label asp-for="Name">Recipe Name </label>
-            <input asp-for="Name" value="@Model.Name">
-            <span asp-validation-for="Name"></span>
-        </div>
-        <div class="d-flex flex-column m-2">
-            <label asp-for="Category">Category </label>
-            <select asp-for="Category">
-                <option value="appetizers">Appetizers</option>
-                <option value="breakfast">Breakfast</option>
-                <option value="soupsNstews">Soups and Stews</option>
-                <option value="mainDishes">Main Dishes</option>
-                <option value="sideDishes">Side Dishes</option>
-                <option value="breads">Breads</option>
-                <option value="desserts">Desserts</option>
-                <option value="drinks">Drinks</option>
-            </select>
-        </div>
-    </div>
-    <div class="d-flex flex-row justify-content-around">
-        <div class="d-flex">
-            <div class="d-flex flex-column">
-                <div class="d-flex flex-row">
-                    <label asp-for="Yield">Yield: </label>
-                    <input asp-for="Yield" value="@Model.Yield">
-                    <span asp-validation-for="Yield"></span>
-                </div>
-                <div class="d-flex flex-row">
-                    <label asp-for="Difficulty">Difficulty: </label>
-                    <select asp-for="Difficulty">
-                        <option value="@Model.Difficulty" selected disabled hidden>@Model.Difficulty</option>
-                        <option value="Easy">Easy</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Hard">Hard</option>
-                    </select>
-                    <span asp-validation-for="Difficulty"></span>
-                </div>
+<h1 class="border-bottom my-3">@Model.Name</h1>
+<div class="m-3">
+    <form action="update" method="post" id="editForm" class="d-flex flex-column">
+        <div class="d-flex flex-row justify-content-between flex-wrap mb-1">
+            <div class="d-flex flex-column w-75 mb-2">
+                <label asp-for="Name" class="mb-1">Recipe Name </label>
+                <input asp-for="Name" value="@Model.Name">
+                <span asp-validation-for="Name"></span>
             </div>
-            <div class="d-flex flex-column">
-                <div class="d-flex flex-row">
-                    <label>Prep. Time: </label>
-                    <input asp-for="PrepHr" type="number" value="@Model.PrepHr">
-                    <label asp-for="PrepHr">hr</label>
-                    <span asp-validation-for="PrepHr"></span>
-                    <input asp-for="PrepMin" type="number" value="@Model.PrepMin">
-                    <label asp-for="PrepMin">min</label>
-                    <span asp-validation-for="PrepMin"></span>
-                </div>
-                <div class="d-flex flex-row">
-                    <label>Cook Time: </label>
-                    <input asp-for="CookHr" type="number" value="@Model.CookHr">
-                    <label asp-for="CookHr">hr</label>
-                    <span asp-validation-for="CookHr"></span>
-                    <input asp-for="CookMin" type="number" value="@Model.CookMin">
-                    <label asp-for="CookMin">min</label>
-                    <span asp-validation-for="CookMin"></span>
-                </div>
+            <div class="d-flex flex-column m-2">
+                <label asp-for="Category">Category </label>
+                <select asp-for="Category">
+                    <option value="appetizers">Appetizers</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="soupsNstews">Soups and Stews</option>
+                    <option value="mainDishes">Main Dishes</option>
+                    <option value="sideDishes">Side Dishes</option>
+                    <option value="breads">Breads</option>
+                    <option value="desserts">Desserts</option>
+                    <option value="drinks">Drinks</option>
+                </select>
             </div>
         </div>
-    </div>
-</form>
-<div class="d-flex flex-row justify-content-around">
-    <div class="d-flex flex-column m-2">
-        <label asp-for="Equipment">Equipment List</label>
-        <div class="containter">
-            @await Html.PartialAsync("../Equipment/_ViewEquipment", @Model.Equipment)
+        <div class="d-flex flex-row justify-content-start flex-wrap">
+            <div class="d-flex flex-column me-3">
+                <div class="d-flex flex-row my-2">
+                    <label class="pe-2">Prep. Time: </label>
+                    <div class="me-3">
+                        <input asp-for="PrepHr" type="number" value="@Model.PrepHr" style="width:80px;">
+                        <label asp-for="PrepHr">hr</label>
+                        <span asp-validation-for="PrepHr"></span>
+                    </div>
+                    <div class="me-2">
+                        <input asp-for="PrepMin" type="number" value="@Model.PrepMin" style="width:80px;">
+                        <label asp-for="PrepMin">min</label>
+                        <span asp-validation-for="PrepMin"></span>
+                    </div>
+                </div>
+                <div class="d-flex flex-row">
+                    <label class="pe-2">Cook Time: </label>
+                    <div class="me-3">
+                        <input asp-for="CookHr" type="number" value="@Model.CookHr" style="width:80px;">
+                        <label asp-for="CookHr">hr</label>
+                        <span asp-validation-for="CookHr"></span>
+                    </div>
+                    <div class="me-2">
+                        <input asp-for="CookMin" type="number" value="@Model.CookMin" style="width:80px;">
+                        <label asp-for="CookMin">min</label>
+                        <span asp-validation-for="CookMin"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-row m-2 align-items-start">
+                <label asp-for="Yield" class="pe-2">Yield: </label>
+                <input asp-for="Yield" value="@Model.Yield">
+                <span asp-validation-for="Yield"></span>
+            </div>
+            <div class="d-flex flex-row m-2 align-items-start">
+                <label asp-for="Difficulty" class="pe-2">Difficulty: </label>
+                <select asp-for="Difficulty">
+                    <option value="@Model.Difficulty" selected disabled hidden>@Model.Difficulty</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+                <span asp-validation-for="Difficulty"></span>
+            </div>
         </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addEquipment">
-            Add Equipment
-        </button>
-    </div>
-    <div class="d-flex flex-column m-2">
-        <label asp-for="Ingredients">Ingredient List</label>
-        <div class="d-flex">
-            @await Html.PartialAsync("../Ingredient/_ViewIngredients", @Model.Ingredients)
+    
+    </form>
+    <div class="d-flex flex-row justify-content-around my-3">
+        <div class="d-flex flex-column justify-content-around flex-wrap w-50">
+            <div class="d-flex flex-column m-2">
+                <label asp-for="Equipment" style="font-size: x-large;" class="mb-2">Equipment List</label>
+                <div class="containter">
+                    @await Html.PartialAsync("../Equipment/_ViewEquipment", @Model.Equipment)
+                </div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-secondary btn-sm my-2" data-bs-toggle="modal" data-bs-target="#addEquipment">
+                    Add Equipment
+                </button>
+            </div>
+            <div class="d-flex flex-column m-2">
+                <label asp-for="Ingredients" style="font-size: x-large;"  class="mb-2">Ingredient List</label>
+                <div class="d-flex">
+                    @await Html.PartialAsync("../Ingredient/_ViewIngredients", @Model.Ingredients)
+                </div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-secondary btn-sm my-2" data-bs-toggle="modal" data-bs-target="#addIngredient">
+                    Add Ingredient
+                </button>
+            </div>
         </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addIngredient">
-            Add Ingredient
-        </button>
-    </div>
-    <div class="d-flex flex-column m-2">
-        <label asp-for="Directions">Directions</label>
-        <div class="d-flex containter-sm">
-            @await Html.PartialAsync("../Step/_ViewDirections", @Model.Directions)
+        <div class="d-flex flex-column m-2 w-50">
+            <label asp-for="Directions" style="font-size: x-large;" class="mb-2">Directions</label>
+            <div class="d-flex containter-sm">
+                @await Html.PartialAsync("../Step/_ViewDirections", @Model.Directions)
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary btn-sm my-2" data-bs-toggle="modal" data-bs-target="#addStep">
+                Add Step
+            </button>
         </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addStep">
-            Add Step
-        </button>
+    </div>
+    <div class="d-flex flex-column align-items-end p-1">
+        <button type="submit" form="editForm" value="Submit" class="btn btn-primary mb-2 ms-0 w-25">Save Recipe</button>
+        <form action="delete" method="post" class="me-2 w-25"><button class="btn btn-danger mx-2 w-100">Delete</button></form>
     </div>
 </div>
-<button type="submit" form="editForm" value="Submit">Save Recipe</button>
-<form action="delete" method="post"><button class="btn btn-danger">Delete</button></form>
 
 <!-- Modal -->
 <div class="modal" id="addEquipment" tabindex="-1" role="dialog" aria-labelledby="addEquipmentTitle" aria-hidden="true">

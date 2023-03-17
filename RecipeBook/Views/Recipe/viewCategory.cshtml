@@ -32,7 +32,7 @@
 
 @await Html.PartialAsync("_RecipeNav")
 
-<div class="d-flex boarder rounded">
+<div class="mx-5 my-2 border border-secondary border-2 rounded px-4">
     <table class="table">
         <thead>
             <tr>
@@ -56,7 +56,7 @@
                     <td>@r.Ingredients.Count</td>
                     <td>@r.Difficulty</td>
                     <td>
-                        <a href="@r.ID/view">View</a>
+                        <a href="@r.ID/view">View</a> &ensp;|&ensp;
                         <a href="@r.ID/edit">Edit</a>
                     </td>
                 </tr>

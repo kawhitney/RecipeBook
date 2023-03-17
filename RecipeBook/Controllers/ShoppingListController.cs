@@ -78,9 +78,9 @@ public class ShoppingListController : Controller
             sl = new ShoppingList(mpId);
             _context.ShoppingLists.Add(sl);
             _context.SaveChanges();
-        Console.WriteLine(new String('=', 20));
-        Console.WriteLine($"MADE IT TO SHOPPING LIST {sl.ID}");
-        Console.WriteLine(new String('=', 20));
+        // Console.WriteLine(new String('=', 20));
+        // Console.WriteLine($"MADE IT TO SHOPPING LIST {sl.ID}");
+        // Console.WriteLine(new String('=', 20));
             // update products in shopping list
             return Redirect($"/shoppingList/{sl.ID}/updateProducts");
         }
@@ -105,9 +105,9 @@ public class ShoppingListController : Controller
             _context.ShoppingLists.Remove(sl);
             _context.SaveChanges();
         }
-        Console.WriteLine(new String('=', 20));
-        Console.WriteLine($"Leaving DeleteSL");
-        Console.WriteLine(new String('=', 20));
+        // Console.WriteLine(new String('=', 20));
+        // Console.WriteLine($"Leaving DeleteSL");
+        // Console.WriteLine(new String('=', 20));
         // return to all meal plans
         return Redirect("/mealplan");
     }

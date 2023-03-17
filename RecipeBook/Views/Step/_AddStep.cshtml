@@ -2,17 +2,19 @@
     <h5 class="modal-title" id="exampleModalLongTitle">Add a Step for making @Model.Name</h5>
 </div>
 <form action="/addStep" method="post" class="row g-3">
-    <div class="modal-body mx-3 d-flex flex-column">
+    <div class="modal-body mx-3 d-flex flex-row">
         <!-- RecipeID -->
         <input name="RecipeID" value="@Model.ID" required hidden>
         <!-- Number -->
-        <div class="d-flex justify-content-start">
-            <label for="Number" class="form-label w-25">Step Number:</label>
-            <input type="number" class="form-control w-25" name="Number" required>
+        <div class="d-flex flex-column justify-content-start me-2">
+            <label for="Number" class="form-label w-100">Step Number:</label>
+            <input type="number" class="form-control" name="Number" min="1" required>
         </div>
         <!-- Type -->
-        <label for="Direction" class="form-label">Direction:</label>
-        <textarea name="Direction" class="form-control" id="Direction" cols="20" rows="5" required></textarea>
+        <div class="d-flex  flex-column w-75">
+            <label for="Direction" class="form-label">Direction:</label>
+            <textarea name="Direction" class="form-control" id="Direction" cols="20" rows="5" required></textarea>
+        </div>
     </div>
     <div class="modal-footer col-12">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

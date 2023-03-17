@@ -2,173 +2,177 @@
     ViewData["Title"] = "Edit Meal Plan";
 }
 @model MyViewModel
-<h2>@Model.MealPlan.Name Weekly Meal Plan</h2>
-<form action="update" method="post" id="editMealForm">
-    <label for="Name"></label>
-    <input name="Name" value="@Model.MealPlan.Name">
-    @if(@Model.MealPlan.Favorite){
-        <input id="Favorite" name="Favorite" type="checkbox" value="true" checked>
-    }
-    else{
-        <input id="Favorite" name="Favorite" type="checkbox" value="true">
-    }
-    <input type="hidden" value="false" name="Favorite">
-    <label for="Favorite">Favorite?</label>
-</form>
-
-<div class="d-flex flex-row justify-content-around">
-    <div class="d-flex flex-column m-2">
-        <label>Monday</label>
-        <div class="containter">
-            <ul class="list-group">
-                @foreach(Meal m in Model.AllMeals){
-                    if(@m.Weekday == 1){
-                        <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
-                            @m.Recipe.Name
-                            <form action="/meal/@m.ID/delete" method="post" class="">
-                                <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
-                        </form>
-                        </li>
-                    }
-                }
-            </ul>
-        </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal1" onclick="">
-            Add Meal
-        </button>
-    </div>
-    <div class="d-flex flex-column m-2">
-        <label>Tuesday</label>
-        <div class="containter">
-            <ul class="list-group">
-                @foreach(Meal m in Model.AllMeals){
-                    if(@m.Weekday == 2){
-                        <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
-                            @m.Recipe.Name
-                            <form action="/meal/@m.ID/delete" method="post" class="">
-                                <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
-                        </form>
-                        </li>
-                    }
-                }
-            </ul>
-        </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal2">
-            Add Meal
-        </button>
-    </div>
-    <div class="d-flex flex-column m-2">
-        <label>Wednesday</label>
-        <div class="containter">
-            <ul class="list-group">
-                @foreach(Meal m in Model.AllMeals){
-                    if(@m.Weekday == 3){
-                        <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
-                            @m.Recipe.Name
-                            <form action="/meal/@m.ID/delete" method="post" class="">
-                                <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
-                        </form>
-                        </li>
-                    }
-                }
-            </ul>
-        </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal3">
-            Add Meal
-        </button>
-    </div>
-    <div class="d-flex flex-column m-2">
-        <label>Thursday</label>
-        <div class="containter">
-            <ul class="list-group">
-                @foreach(Meal m in Model.AllMeals){
-                    if(@m.Weekday == 4){
-                        <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
-                            @m.Recipe.Name
-                            <form action="/meal/@m.ID/delete" method="post" class="">
-                                <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
-                        </form>
-                        </li>
-                    }
-                }
-            </ul>
-        </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal4">
-            Add Meal
-        </button>
-    </div>
-    <div class="d-flex flex-column m-2">
-        <label>Friday</label>
-        <div class="containter">
-            <ul class="list-group">
-                @foreach(Meal m in Model.AllMeals){
-                    if(@m.Weekday == 5){
-                        <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
-                            @m.Recipe.Name
-                            <form action="/meal/@m.ID/delete" method="post" class="">
-                                <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
-                        </form>
-                        </li>
-                    }
-                }
-            </ul>
-        </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal5">
-            Add Meal
-        </button>
-    </div>
-    <div class="d-flex flex-column m-2">
-        <label>Saturday</label>
-        <div class="containter">
-            <ul class="list-group">
-                @foreach(Meal m in Model.AllMeals){
-                    if(@m.Weekday == 6){
-                        <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
-                            @m.Recipe.Name
-                            <form action="/meal/@m.ID/delete" method="post" class="">
-                                <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
+<h2 class="border-bottom my-3">@Model.MealPlan.Name Weekly Meal Plan</h2>
+<div class="m-3">
+    <form action="update" method="post" id="editMealForm">
+        <label for="Name" class="mb-1 mx-3">Change Name:</label>
+        <input name="Name" value="@Model.MealPlan.Name" class="me-3" style="width:300px;">
+        @if(@Model.MealPlan.Favorite){
+            <input id="Favorite" name="Favorite" type="checkbox" value="true" checked>
+        }
+        else{
+            <input id="Favorite" name="Favorite" type="checkbox" value="true">
+        }
+        <input type="hidden" value="false" name="Favorite">
+        <label for="Favorite">Favorite?</label>
+    </form>
+    
+    <div class="d-flex flex-row justify-content-around flex-wrap mt-2">
+        <div class="d-flex flex-column m-2">
+            <label>Monday</label>
+            <div class="containter border border-secondary border-2 rounded px-4">
+                <ul class="list-group my-3">
+                    @foreach(Meal m in Model.AllMeals){
+                        if(@m.Weekday == 1){
+                            <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
+                                @m.Recipe.Name &emsp;
+                                <form action="/meal/@m.ID/delete" method="post" class="">
+                                    <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
                             </form>
-                        </li>
+                            </li>
+                        }
                     }
-                }
-            </ul>
+                </ul>
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary btn-sm my-2" data-bs-toggle="modal" data-bs-target="#addMeal1" onclick="">
+                Add Meal
+            </button>
         </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal6">
-            Add Meal
-        </button>
+        <div class="d-flex flex-column m-2">
+            <label>Tuesday</label>
+            <div class="containter border border-secondary border-2 rounded px-4">
+                <ul class="list-group my-3">
+                    @foreach(Meal m in Model.AllMeals){
+                        if(@m.Weekday == 2){
+                            <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
+                                @m.Recipe.Name &emsp;
+                                <form action="/meal/@m.ID/delete" method="post" class="">
+                                    <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
+                            </form>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary btn-sm my-2" data-bs-toggle="modal" data-bs-target="#addMeal2">
+                Add Meal
+            </button>
+        </div>
+        <div class="d-flex flex-column m-2">
+            <label>Wednesday</label>
+            <div class="containter border border-secondary border-2 rounded px-4">
+                <ul class="list-group my-3">
+                    @foreach(Meal m in Model.AllMeals){
+                        if(@m.Weekday == 3){
+                            <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
+                                @m.Recipe.Name &emsp;
+                                <form action="/meal/@m.ID/delete" method="post" class="">
+                                    <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
+                            </form>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary btn-sm my-2" data-bs-toggle="modal" data-bs-target="#addMeal3">
+                Add Meal
+            </button>
+        </div>
+        <div class="d-flex flex-column m-2">
+            <label>Thursday</label>
+            <div class="containter border border-secondary border-2 rounded px-4">
+                <ul class="list-group my-3">
+                    @foreach(Meal m in Model.AllMeals){
+                        if(@m.Weekday == 4){
+                            <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
+                                @m.Recipe.Name &emsp;
+                                <form action="/meal/@m.ID/delete" method="post" class="">
+                                    <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
+                            </form>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary btn-sm my-2" data-bs-toggle="modal" data-bs-target="#addMeal4">
+                Add Meal
+            </button>
+        </div>
+        <div class="d-flex flex-column m-2">
+            <label>Friday</label>
+            <div class="containter border border-secondary border-2 rounded px-4">
+                <ul class="list-group my-3">
+                    @foreach(Meal m in Model.AllMeals){
+                        if(@m.Weekday == 5){
+                            <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
+                                @m.Recipe.Name &emsp;
+                                <form action="/meal/@m.ID/delete" method="post" class="">
+                                    <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
+                            </form>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary btn-sm my-2" data-bs-toggle="modal" data-bs-target="#addMeal5">
+                Add Meal
+            </button>
+        </div>
+        <div class="d-flex flex-column m-2">
+            <label>Saturday</label>
+            <div class="containter border border-secondary border-2 rounded px-4">
+                <ul class="list-group my-3">
+                    @foreach(Meal m in Model.AllMeals){
+                        if(@m.Weekday == 6){
+                            <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
+                                @m.Recipe.Name &emsp;
+                                <form action="/meal/@m.ID/delete" method="post" class="">
+                                    <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
+                                </form>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary btn-sm my-2" data-bs-toggle="modal" data-bs-target="#addMeal6">
+                Add Meal
+            </button>
+        </div>
+        <div class="d-flex flex-column m-2">
+            <label>Sunday</label>
+            <div class="containter border border-secondary border-2 rounded px-4">
+                <ul class="list-group my-3">
+                    @foreach(Meal m in Model.AllMeals){
+                        if(@m.Weekday == 7){
+                            <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
+                                @m.Recipe.Name &emsp;
+                                <form action="/meal/@m.ID/delete" method="post" class="">
+                                    <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
+                            </form>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary btn-sm my-2" data-bs-toggle="modal" data-bs-target="#addMeal7">
+                Add Meal
+            </button>
+    
+        </div>
     </div>
-    <div class="d-flex flex-column m-2">
-        <label>Sunday</label>
-        <div class="containter">
-            <ul class="list-group">
-                @foreach(Meal m in Model.AllMeals){
-                    if(@m.Weekday == 7){
-                        <li class="list-group-item  list-group-item-action d-flex flex-row justify-content-between">
-                            @m.Recipe.Name
-                            <form action="/meal/@m.ID/delete" method="post" class="">
-                                <button type="submit"class="btn p-0 m-0"style="background-color:transparent">&times;</button>
-                        </form>
-                        </li>
-                    }
-                }
-            </ul>
-        </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#addMeal7">
-            Add Meal
-        </button>
-        
+    
+    <div class="d-flex flex-column align-items-end p-1 mt-3">
+        <button type="submit" form="editMealForm" value="Submit"  class="btn btn-primary mb-2 ms-0 w-25">Save Meal Plan</button>
+        <form action="delete" method="post" class="me-2 w-25"><button  class="btn btn-danger mx-2 w-100">Delete</button></form>
     </div>
 </div>
-
-<button type="submit" form="editMealForm" value="Submit">Save Meal Plan</button>
-<form action="delete" method="post"><button class="btn btn-danger">Delete</button></form>
 
 <!-- Monday Modal -->
 <div class="modal fade" id="addMeal1" tabindex="-1" role="dialog" aria-labelledby="addMealTitle" aria-hidden="true">

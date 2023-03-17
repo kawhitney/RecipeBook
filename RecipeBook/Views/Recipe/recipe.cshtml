@@ -5,6 +5,9 @@
 @await Html.PartialAsync("_RecipeNav")
 
 <div class="d-flex flex-column text-center m-4">
-    <h1>Welcome to @Context.Session.GetString("FamilyName")'s Family Cookbook!</h1>
+    <h3>Welcome to the</h3> 
+    <h1 style="font-size: 4em;"> @Context.Session.GetString("FamilyName")'s </h1> 
+    <h3>Family Cookbook!</h3>
+    <br>
     <h6>Select a Category to start viewing your saved recipes</h6>
 </div>

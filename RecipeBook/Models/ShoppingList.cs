@@ -36,7 +36,7 @@ public class ShoppingList{
     //# pass in Existing Product and ingredient type and ingredient amount
     public Product UpdateProduct(Product product, string type, double amt){
         switch(type){
-            case " ": // just add the amount
+            case "count": // just add the amount
                 product.Amount += (int)Math.Ceiling(amt);
                 break;
             case "lb": // convert lbs to cup
@@ -44,6 +44,9 @@ public class ShoppingList{
                 break;
             case "c.": // pass in cup amount
                 product.IncreaseCount(amt);
+                break;
+            case "oz":
+                product.IncreaseCount(amt*0.125);
                 break;
             case "ml":
             case "g": // convert grams to cup
@@ -55,4 +58,12 @@ public class ShoppingList{
         product.UpdatedAt = DateTime.Now;
         return product;
     }
+
+    //# return string of all products name and amount
+    // public string MakeProductString(){
+    //     string products = "";
+    //     foreach(Product p in this.Products){
+    //         products += ""
+    //     }
+    // }
 }
