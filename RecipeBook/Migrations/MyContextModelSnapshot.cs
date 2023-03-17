@@ -67,6 +67,10 @@ namespace RecipeBook.Migrations
                     b.Property<int>("RecipeID")
                         .HasColumnType("int");
 
+                    b.Property<string>("Style")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("longtext");

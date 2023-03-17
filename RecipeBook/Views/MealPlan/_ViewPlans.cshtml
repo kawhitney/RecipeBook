@@ -22,7 +22,10 @@
             <td>@m.Name</td>
             <td>@m.Meals.Count</td>
             <td>@m.CreatedAt.ToString("MM/dd/yyyy")</td>
-            <td><a href="mealplan/@m.ID/edit">View</a></td>
+            <td>
+                <a href="mealplan/@m.ID/edit">Edit</a> | 
+                <a href="/mealplan/@m.ID/shoppingList/update">Shopping List</a>
+            </td>
         </tr>
         }
     </tbody>

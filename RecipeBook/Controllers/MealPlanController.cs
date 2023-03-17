@@ -36,8 +36,10 @@ public class MealPlanController : Controller
     public IActionResult MealPlans(){
         List<MealPlan> mealPlans = _context.MealPlans
                                     .Where(i=>i.UserID == HttpContext.Session.GetInt32("uid"))
+                                    .Include(i=>i.ShoppingList)
                                     .Include(i=>i.Meals)
-                                    .ThenInclude(m=>m.Recipe).ToList();
+                                    .ThenInclude(m=>m.Recipe)
+                                    .ToList();
         return View(mealPlans);
     }
 
@@ -58,6 +60,9 @@ public class MealPlanController : Controller
     [SessionCheck]
     [HttpGet("mealplan/{mealplanId}/edit")]
     public IActionResult EditMP(int mealplanId){
+        Console.WriteLine(new String('=', 20));
+        Console.WriteLine($"MADE IT TO UPDATE");
+        Console.WriteLine(new String('=', 20));
         MealPlan? item = _context.MealPlans
                         .Include(i=>i.Meals)
                         .ThenInclude(m=>m.Recipe)
@@ -88,9 +93,12 @@ public class MealPlanController : Controller
 
         return View(model);
     }
+
     [HttpPost("mealplan/{mealPlanId}/update")]
     public IActionResult UpdateMP(MealPlan mp, int mealPlanId){
-        Console.WriteLine($"MP: {mp.Favorite} {mp.Name} (kw)");
+        Console.WriteLine(new String('=', 20));
+        Console.WriteLine($"MADE IT TO UPDATEMP");
+        Console.WriteLine(new String('=', 20));
         if(ModelState.IsValid){
             MealPlan? item = _context.MealPlans
                             .FirstOrDefault(i => i.ID == mealPlanId);
@@ -99,7 +107,7 @@ public class MealPlanController : Controller
             item.UpdatedAt = DateTime.Now;
             _context.MealPlans.Update(item);
             _context.SaveChanges();
-            return Redirect($"/mealplan/{mealPlanId}/edit");
+            return Redirect($"edit");
         }
         return RedirectToAction("MealPlans");
     }

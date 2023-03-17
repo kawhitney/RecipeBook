@@ -19,11 +19,11 @@ public class User {
     [UniqueEmail]
     public string Email {get; set;}
     [Required]
+    [Range(1000000000, 9999999999, ErrorMessage = "Phone number must be 10 digits in length")]
     [DataType(DataType.PhoneNumber)]
     public long PhoneNumber {get; set;}
     [Required]
-    [MinLength(10)]
-    [MaxLength(10)]
+    [MinLength(8)]
     [DataType(DataType.Password)]
     public string Password {get; set;}
     [NotMapped]

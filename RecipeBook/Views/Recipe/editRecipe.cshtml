@@ -104,28 +104,28 @@
 <form action="delete" method="post"><button class="btn btn-danger">Delete</button></form>
 
 <!-- Modal -->
-<div class="modal fade" id="addEquipment" tabindex="-1" role="dialog" aria-labelledby="addEquipmentTitle" aria-hidden="true">
+<div class="modal" id="addEquipment" tabindex="-1" role="dialog" aria-labelledby="addEquipmentTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content d-flex flex-column">
-            @await Html.PartialAsync("../Equipment/_AddEquipment")
+            @await Html.PartialAsync("../Equipment/_AddEquipment.cshtml")
         </div>
     </div>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="addIngredient" tabindex="-1" role="dialog" aria-labelledby="addIngredientTitle" aria-hidden="true">
+<div class="modal" id="addIngredient" tabindex="-1" role="dialog" aria-labelledby="addIngredientTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content d-flex flex-column">
-            @await Html.PartialAsync("../Ingredient/_AddIngredient")
+            @await Html.PartialAsync("../Ingredient/_AddIngredient.cshtml")
         </div>
     </div>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="addStep" tabindex="-1" role="dialog" aria-labelledby="addStepTitle" aria-hidden="true">
+<div class="modal" id="addStep" tabindex="-1" role="dialog" aria-labelledby="addStepTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            @await Html.PartialAsync("../Step/_AddStep")
+            @await Html.PartialAsync("../Step/_AddStep.cshtml")
         </div>
     </div>
 </div>

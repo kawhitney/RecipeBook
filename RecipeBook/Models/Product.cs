@@ -11,9 +11,6 @@ public class Product{
     public string Name {get; set;}
     [Required]
     public int Amount {get; set;}
-    [NotMapped]
-    private int TimesAdded {get; set;}
-
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
@@ -22,16 +19,11 @@ public class Product{
     public int ShoppingListID {get; set;} // FK
     public ShoppingList? ShoppingList {get; set;} // nav prop
 
-    public void IncreaseCount(){
-        if(this.TimesAdded > 4){
-            this.TimesAdded = 0;
-            this.Amount++;
-        }
-        else {
-            this.TimesAdded++;
-        }
-    }
+    //! internal use only
+    [NotMapped] 
+    private float TimesAdded {get; set;}
 
+    //# Methods
     public Product(){}
     public Product(string name, int amt, int slID){
         this.Name = name;
@@ -39,4 +31,16 @@ public class Product{
         this.TimesAdded = 1;
         this.ShoppingListID = slID;
     }
+
+    // Increase times added by integer , reset when when TimesAdded > 16.0
+    public void IncreaseCount(double increase){
+        if(this.TimesAdded > 16.0){
+            this.TimesAdded = 0;
+            this.Amount++;
+        }
+        else {
+            this.TimesAdded+= (float)increase;
+        }
+    }
+
 }

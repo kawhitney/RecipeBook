@@ -18394,6 +18394,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\NightKing\\Documents\\CodingDojo\\RecipeBook_App\\RecipeBook\\Views\\ShoppingList\\viewSL.cshtml",
+      "TargetPath": "Views\\ShoppingList\\viewSL.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\NightKing\\Documents\\CodingDojo\\RecipeBook_App\\RecipeBook\\Views\\User\\register.cshtml",
       "TargetPath": "Views\\User\\register.cshtml",
       "FileKind": "mvc"

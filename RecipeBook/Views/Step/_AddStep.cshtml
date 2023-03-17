@@ -6,11 +6,13 @@
         <!-- RecipeID -->
         <input name="RecipeID" value="@Model.ID" required hidden>
         <!-- Number -->
-        <label for="Number" class="form-label">Step Number</label>
-        <input type="number" class="form-control" name="Number" required>
+        <div class="d-flex justify-content-start">
+            <label for="Number" class="form-label w-25">Step Number:</label>
+            <input type="number" class="form-control w-25" name="Number" required>
+        </div>
         <!-- Type -->
-        <label for="Direction" class="form-label">Step Directions</label>
-        <input type="text" class="form-control" name="Direction" required>
+        <label for="Direction" class="form-label">Direction:</label>
+        <textarea name="Direction" class="form-control" id="Direction" cols="20" rows="5" required></textarea>
     </div>
     <div class="modal-footer col-12">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

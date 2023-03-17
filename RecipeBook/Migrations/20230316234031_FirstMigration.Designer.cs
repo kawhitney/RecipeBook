@@ -11,7 +11,7 @@ using RecipeBook.Models;
 namespace RecipeBook.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20230310164559_FirstMigration~")]
+    [Migration("20230316234031_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -68,6 +68,10 @@ namespace RecipeBook.Migrations
 
                     b.Property<int>("RecipeID")
                         .HasColumnType("int");
+
+                    b.Property<string>("Style")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Type")
                         .IsRequired()

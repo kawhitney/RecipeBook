@@ -10,6 +10,8 @@ public class Ingredient{
     [Required]
     public string Type {get; set;}
     [Required]
+    public string Style { get; set;}
+    [Required]
     public float QuantityAmount {get; set;}
     [Required]
     public string QuantityType {get; set;}
